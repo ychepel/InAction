@@ -1,0 +1,40 @@
+*, *:after, *:before {
+  box-sizing: border-box;
+}
+
+body {
+  background: $COLOR_BACKGROUND;
+  color: $COLOR_FOREGROUND;
+
+  -webkit-font-smoothing: antialiased;
+  font-family: -apple-system, '.SFNSDisplay-Regular', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  font-weight: bold;
+  color: $COLOR_ACCENT;
+
+  text-transform: uppercase;
+  font-size: small;
+}
+
+.accent {
+  font-weight: bold;
+  color: $COLOR_ACCENT;
+}
+
+.ct-series-a .ct-line {
+  /* Set the colour of this series line */
+  stroke: $COLOR_ACCENT;
+  /* Control the thikness of your lines */
+  stroke-width: 3px;
+  /* Create a dashed line with a pattern */
+  stroke-dasharray: 10px 5px;
+}
+
+.ct-series-a .ct-point {
+  stroke: $COLOR_ACCENT;
+}
