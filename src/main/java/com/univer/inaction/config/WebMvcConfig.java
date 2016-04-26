@@ -1,8 +1,8 @@
-package net.lermex.inaction.config;
+package com.univer.inaction.config;
 
 import static org.springframework.context.annotation.ComponentScan.Filter;
 
-import net.lermex.inaction.Application;
+import com.univer.inaction.Application;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;

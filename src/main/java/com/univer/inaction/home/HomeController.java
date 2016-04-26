@@ -1,6 +1,6 @@
-package net.lermex.inaction.home;
+package com.univer.inaction.home;
 
-import net.lermex.inaction.TestBean;
+import com.univer.inaction.TestBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;

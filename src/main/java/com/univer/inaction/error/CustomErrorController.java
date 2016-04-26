@@ -1,4 +1,4 @@
-package net.lermex.inaction.error;
+package com.univer.inaction.error;
 
 import java.text.MessageFormat;
 

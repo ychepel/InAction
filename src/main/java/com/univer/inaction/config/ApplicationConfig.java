@@ -1,9 +1,8 @@
-package net.lermex.inaction.config;
+package com.univer.inaction.config;
 
 import static org.springframework.context.annotation.ComponentScan.Filter;
 
-import net.lermex.inaction.Application;
-import org.springframework.context.annotation.Bean;
+import com.univer.inaction.Application;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;

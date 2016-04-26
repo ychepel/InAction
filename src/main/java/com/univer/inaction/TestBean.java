@@ -1,4 +1,4 @@
-package net.lermex.inaction;
+package com.univer.inaction;
 
 import org.springframework.stereotype.Component;
 
