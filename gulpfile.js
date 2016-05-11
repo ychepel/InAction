@@ -6,9 +6,11 @@ var gulp = require("gulp"),//http://gulpjs.com/
     rename = require('gulp-rename'),//https://www.npmjs.org/package/gulp-rename
     log = util.log;
 
-var cssTarget = "src/main/webapp/resources/css/";
+var cssTarget = "src/main/webapp/resources/css/",
+    sassFiles = "src/main/resources/scss/**/*.scss",
+    imageFilesTarget = "src/main/webapp/resources/images/";
 
-gulp.task("default", ["sass"]);
+gulp.task("default", ["sass", "copy-resources"]);
 
 gulp.task("sass", function () {
     log("Generating CSS files " + (new Date()).toString());
@@ -19,6 +21,13 @@ gulp.task("sass", function () {
         .pipe(rename({suffix: '.min'}))
         .pipe(minifycss())
         .pipe(gulp.dest(cssTarget));
+});
+
+gulp.task("copy-resources", function () {
+    log("Copy images");
+    gulp.src("node_modules/material-design-icons/action/drawable-mdpi/ic_card_giftcard_black_48dp.png")
+        .pipe(rename("example-image.png"))
+        .pipe(gulp.dest(imageFilesTarget))
 });
 
 gulp.task("watch", function () {
