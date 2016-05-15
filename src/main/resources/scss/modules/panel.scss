@@ -7,3 +7,18 @@ $BORDER_RADIUS: 2px;
   border-radius: $BORDER_RADIUS;
   padding: 12px;
 }
+
+.person {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  border-radius: 50%;
+  border: 1px solid #DC3522;
+  background-image: url('/resources/images/users/bike-person2.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+.statistics {
+  margin-top: 8px;
+}

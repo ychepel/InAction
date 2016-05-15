@@ -5,6 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js" />
+    <script src="/resources/js/main.js"></script>
 
     <link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css" />
     <link href="../../../resources/css/all.css" rel="stylesheet" media="screen" th:href="@{/resources/css/all.css}" />
@@ -12,19 +13,13 @@
 <body>
 <div th:replace="fragments/header :: header">Header</div>
 <div class="container">
-    <div class="row" style="margin: 8px;">
-        <div class="col-4" style="text-align: center;">
+    <div class="row">
+        <div class="col-4">
             <div class="panel">
                 <h1>Peter Sportsy</h1>
-                <div rel="stylesheet"
-                     media="screen"
-                     style="width: 200px; height: 200px;
-                     margin: 0 auto;
-                     border-radius: 50%;
-                     border: 1px solid #DC3522;
-                     background-image: url('/resources/images/users/bike-person2.jpg');
-                     background-position: center;
-                     background-size: cover;" />
+                <div class="person"
+                     rel="stylesheet"
+                     media="screen"/>
 
                 <p>
                     Welcome to the Spring MVC Quickstart application!
@@ -37,10 +32,10 @@
 
                 <a class="site-header__link" href="#" th:href="@{/}">Home</a>
                 <a class="site-header__link" href="/archive">Archive</a>
-                <a class="site-header__link" href="/logout" th:href="@{#}" onclick="$('#form').submit();">Logout</a>
+                <a class="site-header__link" href="/logout" th:href="@{#}" id="logout-link">Logout</a>
                 <a class="site-header__link" href="/signin" th:href="@{/signin}">Sign in</a>
             </div>
-            <div style="margin-top: 8px;">
+            <div class="statistics">
                 <div class="panel">
                     <h2>This week:</h2>
 
@@ -80,7 +75,7 @@
         </div>
 
         <div class="col-8">
-            <div class="row" style="text-align: center;">
+            <div class="row center">
                 <div class="col-3">
                     <div class="panel">
 
@@ -88,7 +83,7 @@
                              th:src="@{/resources/images/user3.png}"
                              rel="stylesheet"
                              media="screen"
-                             style="width: 18px; height: 18px; vertical-align: middle;" />
+                             class="col-3 image" />
                         <a href="#">Buddies</a>
                     </div>
                 </div>
@@ -100,8 +95,8 @@
                              th:src="@{/resources/images/Chat.png}"
                              rel="stylesheet"
                              media="screen"
-                             style="width: 18px; height: 18px; vertical-align: middle;" />
-                        <a href="#" style="color: #ffad10;">Groups</a>
+                             class="col-3 image" />
+                        <a href="#" class="groups-link">Groups</a>
                     </div>
                 </div>
 
@@ -112,8 +107,8 @@
                              th:src="@{/resources/images/Calendar2.png}"
                              rel="stylesheet"
                              media="screen"
-                             style="width: 18px; height: 18px; vertical-align: middle;" />
-                        <a href="#" style="color: #99cc33;">Events</a>
+                             class="col-3 image" />
+                        <a href="#" class="events-link">Events</a>
                     </div>
                 </div>
 
@@ -124,8 +119,8 @@
                              th:src="@{/resources/images/award.png}"
                              rel="stylesheet"
                              media="screen"
-                             style="width: 18px; height: 18px; vertical-align: middle;" />
-                        <a href="#" style="color: #1983cd;">Challenges</a>
+                             class="col-3 image" />
+                        <a href="#" class="challenges-link">Challenges</a>
                     </div>
                 </div>
             </div>

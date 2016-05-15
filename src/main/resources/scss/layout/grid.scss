@@ -1,7 +1,11 @@
 $pad: 8px;
 
 .row {
-  margin: 0 0 $pad 0;
+  margin: $pad;
+}
+
+.row.center {
+  text-align: center;
 }
 
 .row:after {
@@ -43,8 +47,16 @@ $pad: 8px;
   width: 25%;
 }
 
+.col-3.image {
+  width: 18px;
+  height: 18px;
+  vertical-align: middle;
+}
+
+
 .col-4 {
   width: 33.33333333%;
+  text-align: center;
 }
 
 .col-5 {
@@ -81,4 +93,16 @@ $pad: 8px;
 
 .offset-4 {
   margin-left: 33.33333333%;
+}
+
+.groups-link {
+  color: #ffad10;
+}
+
+.events-link {
+  color: #99cc33;
+}
+
+.challenges-link {
+  color: #1983cd;
 }
