@@ -1,9 +1,15 @@
 package com.univer.inaction.entity;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+
 public class User {
 
     private String name;
     private String password;
+
+    @NotNull
+    @Pattern(regexp=".+@.+\\.[a-z]+")
     private String email;
 
     public User() {
