@@ -4,9 +4,11 @@ var gulp = require("gulp"),//http://gulpjs.com/
     autoprefixer = require('gulp-autoprefixer'),//https://www.npmjs.org/package/gulp-autoprefixer
     minifycss = require('gulp-minify-css'),//https://www.npmjs.org/package/gulp-minify-css
     rename = require('gulp-rename'),//https://www.npmjs.org/package/gulp-rename
+    babel = require("gulp-babel"),
     log = util.log;
 
 var cssTarget = "src/main/webapp/resources/css/",
+    jsTarget = "src/main/webapp/resources/js/"
     sassFiles = "src/main/resources/scss/**/*.scss",
     imageFilesTarget = "src/main/webapp/resources/images/";
 
@@ -33,4 +35,11 @@ gulp.task("copy-resources", function () {
 gulp.task("watch", function () {
     log("Watching scss files for modifications");
     gulp.watch(sassFiles, ["sass"]);
+});
+
+gulp.task("babel", function () {
+    log("Transform JavaScript");
+    gulp.src("src/main/resources/es2015-example.js")
+        .pipe(babel())
+        .pipe(gulp.dest(jsTarget));
 });
