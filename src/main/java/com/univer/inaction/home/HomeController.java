@@ -23,4 +23,10 @@ public class HomeController {
         return modelAndView;
 	}
 
+	@RequestMapping(value = "/homesignin", method = RequestMethod.GET)
+	public ModelAndView getHomeSignIn() {
+		ModelAndView modelAndView = new ModelAndView("home/homeSignedIn");
+		return modelAndView;
+	}
+
 }

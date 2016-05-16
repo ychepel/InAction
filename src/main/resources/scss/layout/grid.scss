@@ -4,10 +4,6 @@ $pad: 8px;
   margin: $pad;
 }
 
-.row.center {
-  text-align: center;
-}
-
 .row:after {
   content: " ";
   clear: both;

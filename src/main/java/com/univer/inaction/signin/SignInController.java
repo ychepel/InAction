@@ -9,8 +9,7 @@ public class SignInController {
 
     @RequestMapping(value = "/signin")
     public ModelAndView index() {
-        final ModelAndView modelAndView = new ModelAndView("signin/signin");
-
+        ModelAndView modelAndView = new ModelAndView("signin/signin");
         return modelAndView;
     }
 }
