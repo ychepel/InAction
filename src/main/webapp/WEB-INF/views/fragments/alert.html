@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+<div th:if="${message != null}" th:fragment="alert (type, message)"
+     class="alert" th:classappend="'alert-' + ${type}">
+    <span th:text="${message}"></span>
+</div>
+</body>
+</html>

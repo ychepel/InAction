@@ -4,3 +4,16 @@
   margin: auto;
   margin-top: 10px;
 }
+
+.help-block {
+  color: #12A524;
+  font-style: italic;
+}
+
+.form-group.has-error .form-control {
+  background-color: #FFE9E9;
+}
+
+.form-group {
+  display: inline-flex;
+}

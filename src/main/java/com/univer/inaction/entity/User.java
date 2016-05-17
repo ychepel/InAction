@@ -2,10 +2,13 @@ package com.univer.inaction.entity;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 public class User {
 
     private String name;
+
+    @Size(min = 3, max = 20)
     private String password;
 
     @NotNull
@@ -37,5 +40,10 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    @Override
+    public String toString() {
+        return "User [name=" + name + "; password=" + password + "; email=" + email + "]";
     }
 }

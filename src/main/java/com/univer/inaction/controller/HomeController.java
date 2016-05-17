@@ -1,4 +1,4 @@
-package com.univer.inaction.home;
+package com.univer.inaction.controller;
 
 import com.univer.inaction.TestBean;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +20,7 @@ public class HomeController {
         ModelAndView modelAndView = new ModelAndView("home/homeNotSignedIn");
 		List<Integer> activities = Arrays.asList(1, 2, 5, 2, 3);
 		modelAndView.addObject("activities", activities);
+		modelAndView.addObject("testBean", testBean);
         return modelAndView;
 	}
 

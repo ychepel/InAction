@@ -15,5 +15,7 @@
 		<appender-ref ref="STDOUT" />
 	</root>
 
-	<logger name="net.lermex" level="ALL" />
+	<logger name="com.univer" level="DEBUG">
+		<appender-ref ref="STDOUT" />
+	</logger>
 </configuration>

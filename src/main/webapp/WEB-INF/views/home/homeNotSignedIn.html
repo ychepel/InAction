@@ -136,9 +136,14 @@
                         <span class="news-item__name">Simon Swiftleg</span>
                         <span class="news-item__date">20 Aug at 9:11 am</span>
                     </div>
-                    <span>Just finished my first 5k. Best feeling ever!
-                        <img src="resources/images/example-image.png" />
-                    </span>
+                    <span>Just finished my first 5k. Best feeling ever!</span>
+                </div>
+                <div class="news-item">
+                    <div>
+                        <span class="news-item__name" th:text="${testBean.testValue}">Test Block</span>
+                        <span class="news-item__date" th:text="${#dates.format(new java.util.Date().getTime(), 'dd MMM HH:mm')}">1-Apr-2016</span>
+                    </div>
+                    <span><img src="resources/images/example-image.png" /></span>
                 </div>
             </div>
         </div>
