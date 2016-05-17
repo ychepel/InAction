@@ -1,8 +1,11 @@
 package com.univer.inaction.controller;
 
+import com.univer.inaction.dao.UserDao;
+import com.univer.inaction.dao.UserRepository;
 import com.univer.inaction.entity.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -19,6 +22,9 @@ import java.util.Map;
 public class SignUpController {
 
     private static Logger logger = LoggerFactory.getLogger(SignUpController.class);
+
+    @Autowired
+    private UserDao userDao;
 
     @RequestMapping(value = "/signup", method= RequestMethod.GET)
     public ModelAndView getSignUp() {
@@ -40,6 +46,8 @@ public class SignUpController {
             logger.warn(result.toString());
             return "signup/signup";
         }
+
+        userDao.saveUser(user);
         return "redirect:/homesignin";
     }
 }
