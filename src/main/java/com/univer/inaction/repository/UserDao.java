@@ -8,22 +8,10 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 
-//@Repository
-@Component
+//@Component
 public class UserDao {
 
 //    @Autowired
-//    private UserRepository userRepository;
-//
-//    @PersistenceContext
-//    private EntityManager entityManager;
-//
-//    public User saveUser(User user) {
-//        User savedUser = userRepository.save(user);
-//        return savedUser;
-//    }
-
-    @Autowired
     private EntityManagerFactory managerFactory;
 
     public void save(User user) {

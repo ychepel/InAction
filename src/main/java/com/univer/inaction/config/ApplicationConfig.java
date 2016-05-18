@@ -20,7 +20,7 @@ import javax.persistence.Persistence;
 
 @Configuration
 @EnableAspectJAutoProxy
-//@EnableJpaRepositories(basePackages= "com.univer.inaction.repository")
+@EnableJpaRepositories(basePackages= "com.univer.inaction.repository")
 //@EnableTransactionManagement
 @ComponentScan(basePackageClasses = Application.class, excludeFilters = @Filter({Controller.class, Configuration.class}))
 class ApplicationConfig {
