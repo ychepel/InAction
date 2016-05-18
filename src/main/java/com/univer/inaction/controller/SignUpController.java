@@ -1,14 +1,12 @@
 package com.univer.inaction.controller;
 
-import com.univer.inaction.dao.UserDao;
-import com.univer.inaction.dao.UserRepository;
 import com.univer.inaction.entity.User;
+import com.univer.inaction.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
-import java.util.Map;
 
 @Controller
 public class SignUpController {
@@ -24,7 +21,7 @@ public class SignUpController {
     private static Logger logger = LoggerFactory.getLogger(SignUpController.class);
 
     @Autowired
-    private UserDao userDao;
+    private UserService userService;
 
     @RequestMapping(value = "/signup", method= RequestMethod.GET)
     public ModelAndView getSignUp() {
@@ -47,7 +44,7 @@ public class SignUpController {
             return "signup/signup";
         }
 
-        userDao.saveUser(user);
+        userService.add(user);
         return "redirect:/homesignin";
     }
 }
