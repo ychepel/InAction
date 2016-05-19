@@ -39,6 +39,7 @@ class ApplicationConfig {
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
         LocalContainerEntityManagerFactoryBean managerFactory = new LocalContainerEntityManagerFactoryBean();
         managerFactory.setDataSource(dataSource());
+        managerFactory.setPackagesToScan(new String[] {"com.univer.inaction.entity"});
 
         JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         managerFactory.setJpaVendorAdapter(vendorAdapter);
@@ -52,8 +53,8 @@ class ApplicationConfig {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("org.postgresql.Driver");
         dataSource.setUrl("jdbc:postgresql://127.0.0.1:5432/inaction");
-        dataSource.setUsername( "postgres" );
-        dataSource.setPassword( "pasw" );
+        dataSource.setUsername("postgres");
+        dataSource.setPassword("pasw");
         return dataSource;
     }
 
