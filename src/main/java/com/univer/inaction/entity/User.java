@@ -13,8 +13,6 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    private String name;
-
     @Size(min = 3, max = 20)
     private String password;
 
@@ -23,14 +21,6 @@ public class User {
     private String email;
 
     public User() {
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getPassword() {
@@ -51,6 +41,6 @@ public class User {
 
     @Override
     public String toString() {
-        return "User [name=" + name + "; password=" + password + "; email=" + email + "]";
+        return "User [password=" + password + "; email=" + email + "]";
     }
 }
