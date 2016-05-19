@@ -44,7 +44,7 @@ public class SignUpController {
             return "signup/signup";
         }
 
-        userService.add(user);
-        return "redirect:/homesignin";
+        User savedUser = userService.save(user);
+        return "redirect:/";
     }
 }

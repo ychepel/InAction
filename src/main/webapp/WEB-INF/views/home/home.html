@@ -5,9 +5,11 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js" />
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" />
     <script src="/resources/js/main.js"></script>
 
     <link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css" />
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
     <link href="../../../resources/css/all.css" rel="stylesheet" media="screen" th:href="@{/resources/css/all.css}" />
 </head>
 <body>
@@ -16,7 +18,8 @@
     <div class="row">
         <div class="col-4">
             <div class="panel">
-                <h1>Peter Sportsy</h1>
+                <h1 th:text="${user?.name}">User</h1>
+                <h1 th:if="${user == null}">Guest</h1>
                 <div class="person"
                      rel="stylesheet"
                      media="screen"/>

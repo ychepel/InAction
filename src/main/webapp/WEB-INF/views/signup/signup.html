@@ -3,6 +3,7 @@
 <head>
     <title>Signup</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
     <link href="../../../resources/css/all.css" rel="stylesheet" media="screen" th:href="@{/resources/css/all.css}" />
     <script src="http://code.jquery.com/jquery-latest.js"></script>
 </head>
@@ -15,6 +16,13 @@
     </th:block>
     <fieldset>
         <legend>Please Sign Up</legend>
+        <div class="form-group" th:classappend="${#fields.hasErrors('name')}? 'has-error'">
+            <label for="name" class="col-lg-2 control-label">Name</label>
+            <div class="col-lg-10">
+                <input type="text" class="form-control" id="name" placeholder="User name" th:field="*{name}" />
+                <span class="help-block" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Incorrect name</span>
+            </div>
+        </div>
         <div class="form-group" th:classappend="${#fields.hasErrors('email')}? 'has-error'">
             <label for="email" class="col-lg-2 control-label">Email</label>
             <div class="col-lg-10">

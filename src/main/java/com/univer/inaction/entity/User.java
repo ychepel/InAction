@@ -20,6 +20,9 @@ public class User {
     @Pattern(regexp=".+@.+\\.[a-z]+")
     private String email;
 
+    @NotNull
+    private String name;
+
     public User() {
     }
 
@@ -39,8 +42,16 @@ public class User {
         this.email = email;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     @Override
     public String toString() {
-        return "User [password=" + password + "; email=" + email + "]";
+        return "User [name=" + name + "; password=" + password + "; email=" + email + "]";
     }
 }

@@ -17,7 +17,7 @@ public class HomeController {
 
 	@RequestMapping(value = "/")
 	public ModelAndView index() {
-        ModelAndView modelAndView = new ModelAndView("home/homeNotSignedIn");
+        ModelAndView modelAndView = new ModelAndView("home/home");
 		List<Integer> activities = Arrays.asList(1, 2, 5, 2, 3);
 		modelAndView.addObject("activities", activities);
 		modelAndView.addObject("testBean", testBean);
