@@ -21,6 +21,9 @@ public class User {
     private int id;
 
     @Size(min = 3, max = 20)
+    @Transient
+    private String originalPassword;
+
     private String password;
 
     @NotNull

@@ -15,12 +15,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.springframework.web.servlet.view.RedirectView;
 
 import javax.validation.Valid;
 
 @Controller
 @Slf4j
 @SessionAttributes("username")
+
 public class SignUpController {
 
     @Autowired
@@ -38,7 +40,8 @@ public class SignUpController {
     @RequestMapping(value = "/signup", method = RequestMethod.POST)
     public String postSignUp(@Valid @ModelAttribute("signupForm") User user,
                              BindingResult result,
-                             Model model) {
+                             Model model,
+                             RedirectAttributes redirectAttributes) {
         log.debug("Receive SignUp form - " + user);
         log.debug("POST model - " + model);
 
@@ -49,8 +52,6 @@ public class SignUpController {
 
         userService.save(user);
         model.addAttribute("username", user.getName());
-
         return "redirect:/";
     }
-
 }
