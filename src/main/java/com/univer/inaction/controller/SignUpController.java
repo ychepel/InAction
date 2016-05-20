@@ -12,12 +12,15 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
 
 @Controller
 @Slf4j
+@SessionAttributes("username")
 public class SignUpController {
 
     @Autowired
@@ -25,17 +28,17 @@ public class SignUpController {
 
     @RequestMapping(value = "/signup", method= RequestMethod.GET)
     public ModelAndView getSignUp() {
-        log.debug("Get ModelAndView in getSignUp()");
-
         ModelAndView modelAndView = new ModelAndView("signup/signup");
         modelAndView.addObject("signupForm", new User());
-        log.debug("Current ModelAndView - " + modelAndView);
+        log.debug("Create ModelAndView - " + modelAndView);
 
         return modelAndView;
     }
 
     @RequestMapping(value = "/signup", method = RequestMethod.POST)
-    public String postSignUp(@Valid @ModelAttribute("signupForm") User user, BindingResult result, Model model) {
+    public String postSignUp(@Valid @ModelAttribute("signupForm") User user,
+                             BindingResult result,
+                             Model model) {
         log.debug("Receive SignUp form - " + user);
         log.debug("POST model - " + model);
 
@@ -44,7 +47,10 @@ public class SignUpController {
             return "signup/signup";
         }
 
-        User savedUser = userService.save(user);
+        userService.save(user);
+        model.addAttribute("username", user.getName());
+
         return "redirect:/";
     }
+
 }

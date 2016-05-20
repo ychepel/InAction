@@ -18,8 +18,8 @@
     <div class="row">
         <div class="col-4">
             <div class="panel">
-                <h1 th:text="${user?.name}">User</h1>
-                <h1 th:if="${user == null}">Guest</h1>
+                <h1 th:text="${session.username}">User</h1>
+                <h1 th:if="${session.username == null}">Guest</h1>
                 <div class="person"
                      rel="stylesheet"
                      media="screen"/>
@@ -28,7 +28,7 @@
                     Get started quickly by signing up.
                 </p>
 
-                <p>
+                <p th:if="${session.username == null}">
                     <a href="/signup" th:href="@{/signup}" class="btn btn-success btn-lg">Sign up</a>
                 </p>
 
