@@ -22,15 +22,17 @@ public class User {
 
     @Size(min = 3, max = 20)
     @Transient
-    private String originalPassword;
+    private String inputPassword;
 
     private String password;
 
     @NotNull
     @Pattern(regexp=".+@.+\\.[a-z]+")
+    @Column(unique = true)
     private String email;
 
     @NotNull
+    @Column(unique = true)
     private String name;
 
     public User() {

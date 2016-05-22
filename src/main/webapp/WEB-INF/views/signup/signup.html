@@ -29,11 +29,11 @@
                 <span class="help-block" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Incorrect email</span>
             </div>
         </div>
-        <div class="form-group" th:classappend="${#fields.hasErrors('originalPassword')}? 'has-error'">
-            <label for="originalPassword" class="col-lg-2 control-label">Password</label>
+        <div class="form-group" th:classappend="${#fields.hasErrors('inputPassword')}? 'has-error'">
+            <label for="inputPassword" class="col-lg-2 control-label">Password</label>
             <div class="col-lg-10">
-                <input type="password" class="form-control" id="originalPassword" placeholder="Password" th:field="*{originalPassword}"/>
-                <span class="help-block" th:if="${#fields.hasErrors('originalPassword')}" th:errors="*{originalPassword}">Incorrect password</span>
+                <input type="password" class="form-control" id="inputPassword" placeholder="Password" th:field="*{inputPassword}"/>
+                <span class="help-block" th:if="${#fields.hasErrors('inputPassword')}" th:errors="*{inputPassword}">Incorrect password</span>
             </div>
         </div>
         <div class="form-group">
