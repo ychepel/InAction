@@ -26,6 +26,10 @@ public class UserService {
 
     public User getByName(String name) { return userRepository.findByName(name);}
 
+    public User getByEmail(String email) {
+        return userRepository.findByEmail(email);
+    }
+
     public boolean contains(String inputName, String inputPassword) {
         User user = getByName(inputName);
         if(user != null) {
@@ -35,4 +39,6 @@ public class UserService {
         }
         return false;
     }
+
+
 }
