@@ -22,7 +22,6 @@ import javax.validation.Valid;
 @Controller
 @Slf4j
 @SessionAttributes("username")
-
 public class SignUpController {
 
     @Autowired

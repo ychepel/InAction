@@ -16,11 +16,23 @@ public class UserService {
     private PasswordEncoder passwordEncoder;
 
     public User save(User user) {
-        user.setPassword(passwordEncoder.encode(user.getOriginalPassword()));
+        user.setPassword(passwordEncoder.encode(user.getInputPassword()));
         return userRepository.save(user);
     }
 
     public User getById(int id) {
         return userRepository.findOne(id);
+    }
+
+    public User getByName(String name) { return userRepository.findByName(name);}
+
+    public boolean contains(String inputName, String inputPassword) {
+        User user = getByName(inputName);
+        if(user != null) {
+            if(passwordEncoder.matches(inputPassword, user.getPassword())) {
+                return true;
+            }
+        }
+        return false;
     }
 }
