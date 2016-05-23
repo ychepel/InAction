@@ -269,7 +269,7 @@
                 <executions>
                     <execution>
                         <id>checkstyle-check</id>
-                        <phase>compile</phase>
+                        <phase>package</phase>
                         <goals>
                             <goal>check</goal>
                         </goals>
