@@ -264,7 +264,8 @@
                 <version>2.17</version>
                 <configuration>
                     <configLocation>src/main/checkstyle/checkstyle.xml</configLocation>
-                    <failsOnError>false</failsOnError>
+                    <skip>false</skip>
+                    <consoleOutput>true</consoleOutput>
                 </configuration>
                 <executions>
                     <execution>
