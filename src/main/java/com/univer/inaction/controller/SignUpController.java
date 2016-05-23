@@ -2,10 +2,9 @@ package com.univer.inaction.controller;
 
 import com.univer.inaction.entity.User;
 import com.univer.inaction.service.UserService;
-import com.univer.inaction.service.UserUniqueValidator;
+import com.univer.inaction.validator.UserUniqueValidator;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -24,10 +23,10 @@ import javax.validation.Valid;
 public class SignUpController {
 
     @Autowired
-    private UserService userService;
+    private UserUniqueValidator userUniqueValidator;
 
     @Autowired
-    private UserUniqueValidator userUniqueValidator;
+    private UserService userService;
 
     @RequestMapping(value = "/signup", method= RequestMethod.GET)
     public ModelAndView getSignUp() {

@@ -1,5 +1,6 @@
 package com.univer.inaction.entity;
 
+import com.univer.inaction.validator.Unique;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -31,6 +32,7 @@ public class User {
     private String email;
 
     @NotNull
+//    @Unique
     private String name;
 
     public User() {
