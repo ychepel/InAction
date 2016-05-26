@@ -28,11 +28,9 @@ public class User {
 
     @NotNull
     @Pattern(regexp=".+@.+\\.[a-z]+")
-    @Column(unique = true)
     private String email;
 
     @NotNull
-    @Column(unique = true)
     private String name;
 
     public User() {
