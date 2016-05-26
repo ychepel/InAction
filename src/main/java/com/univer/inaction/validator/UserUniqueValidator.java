@@ -8,17 +8,11 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
 @Component
-public class UserUniqueValidator implements Validator {
+public class UserUniqueValidator {
 
     @Autowired
     private UserService userService;
 
-    @Override
-    public boolean supports(Class<?> clazz) {
-        return User.class.isAssignableFrom(clazz);
-    }
-
-    @Override
     public void validate(Object target, Errors errors) {
         User user = (User) target;
         if(userService.getByName(user.getName()) != null) {
